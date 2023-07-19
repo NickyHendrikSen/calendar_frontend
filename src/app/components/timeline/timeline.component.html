@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="date-wrapper">{{ date?.getDate() }} {{ monthName }} {{date?.getFullYear()}}</div>
+    <div class="timeline-wrapper">
+
+        <div class="timeline">
+
+            <div class="time-wrapper">
+                <div class="time"><span>12 AM</span></div>
+                <div class="time"><span>1 AM</span></div>
+                <div class="time"><span>2 AM</span></div>
+                <div class="time"><span>3 AM</span></div>
+                <div class="time"><span>4 AM</span></div>
+                <div class="time"><span>5 AM</span></div>
+                <div class="time"><span>6 AM</span></div>
+                <div class="time"><span>7 AM</span></div>
+                <div class="time"><span>8 AM</span></div>
+                <div class="time"><span>9 AM</span></div>
+                <div class="time"><span>10 AM</span></div>
+                <div class="time"><span>11 AM</span></div>
+                <div class="time"><span>12 PM</span></div>
+                <div class="time"><span>1 PM</span></div>
+                <div class="time"><span>2 PM</span></div>
+                <div class="time"><span>3 PM</span></div>
+                <div class="time"><span>4 PM</span></div>
+                <div class="time"><span>5 PM</span></div>
+                <div class="time"><span>6 PM</span></div>
+                <div class="time"><span>7 PM</span></div>
+                <div class="time"><span>8 PM</span></div>
+                <div class="time"><span>9 PM</span></div>
+                <div class="time"><span>10 PM</span></div>
+                <div class="time"><span>11 PM</span></div>
+                <div class="time"><span>12 AM</span></div>
+            </div>
+
+            <div class="line-container">
+                <div class="line-divider"></div>
+                <div class="line-wrapper">
+                    <div class="appointment-wrapper">
+                        <button *ngFor="let timeline of timelines; let i = index" 
+                        class="appointment-item"
+                        [attr.data-index]="i"
+                        [style.top]="timeline.top + 'px'"
+                        [style.left]="timeline.left + '%'"
+                        [style.width]="timeline.widthInPercent + '%'"
+                        [style.z-index]="1+i"
+                        cdkDragBoundary=".appointment-wrapper" cdkDrag cdkDragLockAxis="y"
+                        (cdkDragEnded)="dragEnd($event, timeline.appointment.id)"
+                        (click)="edit(timeline.appointment.id)"
+                        >
+                            <div class="appointment-title">{{ timeline.appointment.title }}</div>
+                            <div class="appointment-date">{{ timeline.appointment.date.getHours() === 12 ? timeline.appointment.date.getHours() : timeline.appointment.date.getHours()%12 }} : {{ timeline.appointment.date.getMinutes().toString().padStart(2, '0') }} {{ timeline.appointment.date.getHours() >= 12 ? 'PM' : 'AM' }} </div>
+                            <div class="appointment-desc">{{ timeline.appointment.description }}</div>
+                        </button>
+                    </div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

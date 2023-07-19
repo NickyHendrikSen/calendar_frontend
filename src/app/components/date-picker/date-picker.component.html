@@ -1,0 +1,13 @@
+<div class="calendar-wrapper">
+    <!-- <div class="calendar-header">
+        <div class="calendar-title">{{ monthName }} {{ date.getFullYear() }}</div>
+        <div class="calendar-arrows">
+            <div class="calendar-left-arrow" (click)="prevMonth()">&lt;</div>
+            <div class="calendar-right-arrow" (click)="nextMonth()">&gt;</div>
+        </div>
+    </div>
+    <div class="calendar-days">
+        <div class="calendar-day-item"></div>
+    </div> -->
+    <mat-calendar [(selected)]="date" (selectedChange)="onSelectDate($event)"></mat-calendar>
+</div>

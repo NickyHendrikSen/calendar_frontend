@@ -1,0 +1,106 @@
+.container {
+    .date-wrapper {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .timeline-wrapper {
+        padding: 15px;
+        height: auto;
+        background-color: rgba(0,0,0,0.1);
+        height: 700px;
+        overflow-y: scroll;
+        .timeline {
+            position: relative;
+            display: flex;
+            overflow: hidden;
+            -webkit-box-align: stretch;
+            -webkit-align-items: stretch;
+            align-items: stretch;
+            flex: 1 1 auto;
+            height: 1500px;
+
+            .time-wrapper {
+                .time {
+                    position: relative;
+                    height: 60px;
+                    width: 40px;
+                    padding-right: 8px;
+                    text-align: right;
+                    & > span {
+                        position: absolute;
+                        display: block;
+                        top: -10px;
+                        font-size: 10px;
+                        text-align: center;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .line-container {
+                position: relative;
+                width: 100%;
+                .line-divider {
+                    position: absolute;
+                    left: 8px;
+                    border-right: 1px solid black;
+                    height: 100%;
+                }
+                .line-wrapper {
+                    .appointment-wrapper {
+                        position: absolute;
+                        width: calc(100% - 8px);
+                        height: 1499px;
+                        margin-left: 8px;
+                        cursor: pointer;
+                        .appointment-item {
+                            position: absolute;
+                            box-sizing: border-box;
+                            border: none;
+                            background-color: var(--color-blue);
+                            border-radius: 10px;
+                            width: 100%;
+                            height: 60px;
+                            box-shadow: -3px -3px 3px rgb(255 255 255 / 0.2);
+                            border: 1px solid white;
+                            text-align: left;
+                            .appointment-title {
+                                margin-top: 5px;
+                                margin-left: 10px;
+                                font-size: 12px;
+                                color: white;
+                                font-weight: bold;
+                                height: 12px;
+                            }
+                            .appointment-date {
+                                margin-top: 3px;
+                                margin-left: 10px;
+                                font-size: 10px;
+                                color: white;
+                                height: 12px;
+                            }
+                            .appointment-desc {
+                                margin-top: 2px;
+                                margin-left: 10px;
+                                font-size: 10px;
+                                color: white;
+                                height: 12px;
+                                text-overflow:ellipsis;
+                                white-space: nowrap;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+
+                    .line {
+                        box-sizing: border-box;
+                        height: 60px;
+                        border-top: 1px solid black;
+                    }
+                }
+            }
+
+        }
+    }
+}

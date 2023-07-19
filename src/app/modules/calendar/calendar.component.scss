@@ -1,0 +1,10 @@
+.container {
+    padding: 10px;
+    .calendar-container {
+        display: flex;
+        .timeline {
+            margin-left: 10px;
+            width: 100%;
+        }
+    }
+}

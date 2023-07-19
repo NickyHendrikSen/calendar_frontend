@@ -1,0 +1,28 @@
+.container {
+    padding: 20px;
+    width: 300px;
+    .title {
+        color: black;
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    form {
+        .form-input {
+            width: 100%;
+            &::ng-deep .mat-mdc-form-field-subscript-wrapper{
+                margin-bottom: -1.25em;
+             }
+            mat-form-field {
+                width: 100%;
+            }
+        }
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-error {
+            color: red;
+        }
+    }
+}
